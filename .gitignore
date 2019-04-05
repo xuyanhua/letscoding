@@ -7,7 +7,5 @@
 *.iml
 out
 gen
-.gitignore
 .idea/
 dsaa.iml
-src/com/yanhua/datastructure/
