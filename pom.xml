@@ -10,6 +10,7 @@
     <modules>
         <module>algorithms</module>
         <module>datastructure</module>
+        <module>designpattern</module>
     </modules>
 
     <properties>
