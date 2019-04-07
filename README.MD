@@ -2,6 +2,7 @@ coding
 # 数组结构
 ## 数组
 + 找出重复的元素：[FindDuplicateElement](datastructure/src/main/java/com/yanhua/datastructure/array/FindDuplicateElement.java)
++ 不修改数组查找重复的元素：[FindDuplicateElementWithNoModify](datastructure/src/main/java/com/yanhua/datastructure/array/FindDuplicateElementWithNoModify.java)
 ## 链表
 + 问题1.O(1)时间复杂度内删除元素：[DeleteListNode](datastructure/src/main/java/com/yanhua/datastructure/list/deletenode/DeleteListNode.java)
 
