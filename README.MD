@@ -6,7 +6,7 @@ coding
 + 在二维数组中查找指定元素是否存在：[FindIn2DArray](datastructure/src/main/java/com/yanhua/datastructure/array/FindIn2DArray.java)
 
 ## 链表
-+ 问题1.O(1)时间复杂度内删除元素：[DeleteListNode](datastructure/src/main/java/com/yanhua/datastructure/list/deletenode/DeleteListNode.java)
++ O(1)时间复杂度内删除元素：[DeleteListNode](datastructure/src/main/java/com/yanhua/datastructure/list/deletenode/DeleteListNode.java)
 ## 字符串
 + 替换字符串中的空格：[ReplaceBlank](datastructure/src/main/java/com/yanhua/datastructure/string/ReplaceBlank.java)
 # 算法
