@@ -8,8 +8,8 @@ package com.yanhua.datastructure.list;
  * @date 2019/4/5 上午7:17
  */
 public class List<T> {
-    Node<T> head;
-    int size;
+    private Node<T> head;
+    private int size;
 
     public Node<T> getHead() {
         return head;

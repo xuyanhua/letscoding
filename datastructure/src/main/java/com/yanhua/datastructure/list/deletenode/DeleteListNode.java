@@ -1,4 +1,7 @@
-package com.yanhua.datastructure.list;
+package com.yanhua.datastructure.list.deletenode;
+
+import com.yanhua.datastructure.list.List;
+import com.yanhua.datastructure.list.Node;
 
 /**
  * 在O(1)时间复杂度内删除结点
@@ -29,7 +32,7 @@ public class DeleteListNode {
          * </ul>
          */
         if (deletedNode.getNext() == null) {
-            Node cur = list.head;
+            Node cur = list.getHead();
             Node next = null;
             while ((next = cur.getNext()) != null) {
                 if (next.equals(deletedNode)) {
