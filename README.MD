@@ -1,7 +1,7 @@
 coding
 # 数组结构
 ## 链表
-+ 问题1.O(1)时间复杂度内删除元素:***DeleteListNode***
++ 问题1.O(1)时间复杂度内删除元素:***[DeleteListNode](datastructure/src/main/java/com/yanhua/datastructure/list/DeleteListNode.java)***
 
 # 算法
 
