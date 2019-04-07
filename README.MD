@@ -1,5 +1,5 @@
 Let's Coding
-# 数组结构
+# 数据结构
 ## 数组
 + 找出重复的元素：[FindDuplicateElement](datastructure/src/main/java/com/yanhua/datastructure/array/FindDuplicateElement.java)
 + 不修改数组查找重复的元素：[FindDuplicateElementWithNoModify](datastructure/src/main/java/com/yanhua/datastructure/array/FindDuplicateElementWithNoModify.java)
