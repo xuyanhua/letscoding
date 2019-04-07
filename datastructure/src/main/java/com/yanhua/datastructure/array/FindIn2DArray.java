@@ -22,18 +22,21 @@ public class FindIn2DArray {
      * @return
      */
     public static boolean exists(int[][] arr, int num) {
+        if (arr != null && arr.length == 0 && arr[0].length == 0) {
+            return false;
+        }
         int width = arr[0].length;
         int height = arr.length;
-        for (int x = 0, y = height - 1; x <= width - 1 && y >= 0; ) {
-            int tmp = arr[x][y];
+        for (int row = 0, column = width - 1; row <= height - 1 && column >= 0; ) {
+            int tmp = arr[row][column];
             System.out.println("tmp=" + tmp);
             if (tmp == num) {
                 return true;
             }
             if (tmp > num) {
-                y--;//左
+                column--;//左
             } else {
-                x++;//下
+                row++;//下
             }
         }
         return false;
@@ -46,9 +49,10 @@ public class FindIn2DArray {
          * 2 ,4 ,9 ,12
          * 4 ,7 ,10 ,13
          * 6 ,8 ,11 ,15
+         * 7 ,9 ,12 ,17
          */
-        int[][] arr = {{1, 2, 8, 9}, {2, 4, 9, 12}, {4, 7, 10, 13}, {6, 8, 11, 15}};
-        int num = 7;
+        int[][] arr = {{1, 2, 8, 9}, {2, 4, 9, 12}, {4, 7, 10, 13}, {6, 8, 11, 15},{7 ,9 ,12 ,17}};
+        int num = 14;
         boolean exists = exists(arr, num);
         System.out.println("exists = " + exists);
     }
