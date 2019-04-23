@@ -3,6 +3,10 @@ package com.yanhua.algorithms.sort;
 import java.util.List;
 
 /**
+ * 思想：
+ * <p>经过一次排序将待排序记录分为两部分，其中一部分的关键字均比另一部分关键字小</p>
+ * <p>则可对这这部分分别继续进行排序，以达到整个序列有序的目的</p>
+ *
  * @author xuyanhua
  * @description:
  * @date 2019/4/23 下午2:05
@@ -10,7 +14,7 @@ import java.util.List;
 public class QuickSort {
 
     /**
-     * 交换顺序表L中子表的记录，使枢轴记录到位，并返回其所在位置
+     * 交换顺序表list中子表的记录，使枢轴记录到位，并返回其所在位置
      * 此时它之前（后）的记录均不大（小）于它
      *
      * @param list
@@ -65,8 +69,8 @@ public class QuickSort {
 
     public static void main(String[] args) {
         List<Integer> list = SortUtil.random(10);
-        System.out.println(list);
+        System.out.printf("排序前:%s\n", list);
         quickSort(list);
-        System.out.println(list);
+        System.out.printf("排序后:%s\n", list);
     }
 }
