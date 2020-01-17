@@ -51,9 +51,40 @@ public class FindIn2DArray {
          * 6 ,8 ,11 ,15
          * 7 ,9 ,12 ,17
          */
-        int[][] arr = {{1, 2, 8, 9}, {2, 4, 9, 12}, {4, 7, 10, 13}, {6, 8, 11, 15},{7 ,9 ,12 ,17}};
-        int num = 14;
+        int[][] arr = {{1, 2, 8, 9}, {2, 4, 9, 12}, {4, 7, 10, 13}, {6, 8, 11, 15}, {7, 9, 12, 17}};
+        int num = 6;
         boolean exists = exists(arr, num);
         System.out.println("exists = " + exists);
+        boolean find = find(arr, num);
+        System.out.println("find = " + find);
+    }
+
+    /**
+     * 再次尝试
+     * @param arr
+     * @param num
+     * @return
+     */
+    private static boolean find(int[][] arr, int num) {
+        if (arr == null || arr.length == 0) {
+            return false;
+        }
+        int width = arr[0].length;
+        int height = arr.length;
+        for (int x = 0, y = width - 1; x <= (height - 1) & y >= 0; ) {
+            int find = arr[x][y];
+            System.out.println("find=" + find);
+            if (num == find) {
+                return true;
+            }
+            if (num > find) {
+                x += 1;
+            }
+            if (num < find) {
+                y -= 1;
+            }
+
+        }
+        return false;
     }
 }
