@@ -1,4 +1,4 @@
-package com.yanhua.javabase.socket;
+package com.yanhua.javabase.net.socket;
 
 import java.io.IOException;
 import java.io.InputStream;
