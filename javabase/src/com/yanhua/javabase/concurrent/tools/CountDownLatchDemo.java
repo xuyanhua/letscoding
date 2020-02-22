@@ -2,6 +2,9 @@ package com.yanhua.javabase.concurrent.tools;
 
 import java.util.concurrent.CountDownLatch;
 
+/**
+ * 闭锁
+ */
 public class CountDownLatchDemo {
     public static void main(String[] args) throws InterruptedException {
         new CountDownLatchDemo().go();
