@@ -5,6 +5,7 @@ import java.lang.reflect.Method;
 
 public class ReflectionApp {
     public static void main(String[] args) {
+
         //正常的创建对象，调用方法
         SayHello sayHello = new SayHello();
         sayHello.sayHello("jack");
@@ -29,6 +30,6 @@ public class ReflectionApp {
         } catch (InstantiationException e) {
             e.printStackTrace();
         }
-
+        System.out.println(System.getProperty("java.ext.dirs"));
     }
 }
