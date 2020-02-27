@@ -3,6 +3,8 @@ package com.yanhua.datastructure.array;
 import java.util.Arrays;
 
 /**
+ * 给定一组数字，返回所有的排列组合
+ *
  * @author xuyanhua
  * @description:
  * @date 2019/4/9 下午11:34
