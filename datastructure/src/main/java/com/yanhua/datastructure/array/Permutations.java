@@ -16,10 +16,10 @@ public class Permutations {
         permutations(arr);
         System.out.printf("\n数组:%s的全排序\n", Arrays.toString(arr));
         permutations2(arr, 0, arr.length);
-        System.out.println();
-        int[] arr2 = {1, 1, 2};
-        System.out.printf("数组:%s的全排序\n", Arrays.toString(arr2));
-        permutationsDup(arr2, 0, arr.length);
+//        System.out.println();
+//        int[] arr2 = {1, 1, 2};
+//        System.out.printf("数组:%s的全排序\n", Arrays.toString(arr2));
+//        permutationsDup(arr2, 0, arr.length);
     }
 
     /**
@@ -52,6 +52,9 @@ public class Permutations {
      * For example,
      * [1,2,3] have the following permutations:
      * [1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], and [3,2,1].
+     * https://images0.cnblogs.com/blog/587576/201411/251159363407394.png
+     * 解法：先固定第一个位置，将剩余的位置进行全排序
+     * 之后将第二个位起与第一个位置的数字交换一次，形成一种排序
      */
     public static void permutations2(int[] arr, int start, int end) {
         if (start == end) {
