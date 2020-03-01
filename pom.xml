@@ -11,11 +11,17 @@
         <module>algorithms</module>
         <module>datastructure</module>
         <module>designpattern</module>
+        <module>javabase</module>
     </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
-
+    <dependencies>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-server</artifactId>
+            <version>9.4.26.v20200117</version>
+        </dependency>
+    </dependencies>
 </project>
