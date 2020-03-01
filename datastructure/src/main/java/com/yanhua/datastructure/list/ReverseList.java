@@ -5,6 +5,8 @@ import com.yanhua.datastructure.list.lists.Node;
 
 /**
  * 单链表反转
+ * 题目描述：输入一个单向链表，输出逆序反转后的链表
+ * 分析：链表的转置是一个很常见、很基础的数据结构题了，非递归的算法很简单，用三个临时指针 pre、head、next 在链表上循环一遍即可。递归算法也是比较简单的，但是如果思路不清晰估计一时半会儿也写不出来吧。
  */
 public class ReverseList {
 
