@@ -1,7 +1,7 @@
-package com.yanhua.datastructure.list.deletenode;
+package com.yanhua.datastructure.list;
 
-import com.yanhua.datastructure.list.List;
-import com.yanhua.datastructure.list.Node;
+import com.yanhua.datastructure.list.lists.List;
+import com.yanhua.datastructure.list.lists.Node;
 
 /**
  * 单链表反转

@@ -1,4 +1,4 @@
-package com.yanhua.datastructure.list;
+package com.yanhua.datastructure.list.lists;
 
 /**
  * 链表结点
@@ -13,7 +13,7 @@ public class Node<T> {
     //后继结点
     Node next;
 
-    public T getData() {
+    public T data() {
         return data;
     }
 
@@ -21,11 +21,11 @@ public class Node<T> {
         this.data = data;
     }
 
-    public Node getNext() {
+    public Node next() {
         return next;
     }
 
-    public void setNext(Node next) {
+    public void next(Node next) {
         this.next = next;
     }
 }

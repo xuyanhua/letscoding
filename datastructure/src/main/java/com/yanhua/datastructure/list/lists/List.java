@@ -1,4 +1,4 @@
-package com.yanhua.datastructure.list;
+package com.yanhua.datastructure.list.lists;
 
 /**
  * 链表
@@ -11,11 +11,11 @@ public class List<T> {
     private Node<T> head;
     private int size;
 
-    public Node<T> getHead() {
+    public Node<T> head() {
         return head;
     }
 
-    public void setHead(Node<T> head) {
+    public void head(Node<T> head) {
         this.head = head;
     }
 
@@ -38,7 +38,7 @@ public class List<T> {
             throw new IndexOutOfBoundsException();
         }
         int index0 = 0;
-        Node cur = head.next;
+        Node cur = head;
         while (cur != null) {
             if (index0 == index) {
                 return cur;
@@ -51,9 +51,9 @@ public class List<T> {
 
     public String toString() {
         StringBuilder sb = new StringBuilder("[");
-        Node cur = head.next;
+        Node cur = head;
         while (cur != null) {
-            sb.append(cur.getData()).append(",");
+            sb.append(cur.data()).append(",");
             cur = cur.next;
         }
         sb.deleteCharAt(sb.length() - 1).append("]");
@@ -69,13 +69,17 @@ public class List<T> {
     public static List<Integer> toList(Integer[] arr) {
         List<Integer> list = new List<>();
         Node<Integer> head = new Node();
-        list.setHead(head);
+        list.head(head);
         Node cur = head;
         for (int i = 0; i < arr.length; i++) {
+            if (i == 0) {
+                head.setData(arr[i]);
+                continue;
+            }
             Node node = new Node();
             node.setData(arr[i]);
-            cur.setNext(node);
-            cur = cur.getNext();
+            cur.next(node);
+            cur = cur.next();
         }
         list.setSize(arr.length);
         return list;

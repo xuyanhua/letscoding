@@ -1,7 +1,7 @@
-package com.yanhua.datastructure.list.deletenode;
+package com.yanhua.datastructure.list;
 
-import com.yanhua.datastructure.list.List;
-import com.yanhua.datastructure.list.Node;
+import com.yanhua.datastructure.list.lists.List;
+import com.yanhua.datastructure.list.lists.Node;
 
 /**
  * 在O(1)时间复杂度内删除结点
@@ -24,19 +24,19 @@ public class DeleteListNode {
             return;
         }
         /**
-         * 如果结点时尾结点，则删除要(O(n))
+         * 如果结点是尾结点，则删除要(O(n))
          * <ul>
          *     <li>a.从头结点遍历链表到要删除结点的前驱结点</li>
          *     <li>b.把前驱结点的next指针指向删除结点的下一结点</li>
          *     <li>c.再释放删除结点内存空间（java中会自动回收）</li>
          * </ul>
          */
-        if (deletedNode.getNext() == null) {
-            Node cur = list.getHead();
+        if (deletedNode.next() == null) {
+            Node cur = list.head();
             Node next = null;
-            while ((next = cur.getNext()) != null) {
+            while ((next = cur.next()) != null) {
                 if (next.equals(deletedNode)) {
-                    cur.setNext(next.getNext());
+                    cur.next(next.next());
                     return;
                 }
                 cur = next;
@@ -50,9 +50,9 @@ public class DeleteListNode {
          *     <li>c.删除后续结点(java中会自动回收)</li>
          * </ul>
          */
-        Node next = deletedNode.getNext();
-        deletedNode.setData(next.getData());
-        deletedNode.setNext(next.getNext());
+        Node next = deletedNode.next();
+        deletedNode.setData(next.data());
+        deletedNode.next(next.next());
     }
 
     public static void main(String[] args) {
