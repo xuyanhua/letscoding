@@ -17,7 +17,7 @@ public class Node<T> {
         return data;
     }
 
-    public void setData(T data) {
+    public void data(T data) {
         this.data = data;
     }
 

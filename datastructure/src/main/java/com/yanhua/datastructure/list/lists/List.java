@@ -73,11 +73,11 @@ public class List<T> {
         Node cur = head;
         for (int i = 0; i < arr.length; i++) {
             if (i == 0) {
-                head.setData(arr[i]);
+                head.data(arr[i]);
                 continue;
             }
             Node node = new Node();
-            node.setData(arr[i]);
+            node.data(arr[i]);
             cur.next(node);
             cur = cur.next();
         }

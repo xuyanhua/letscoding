@@ -53,7 +53,7 @@ public class DeleteListNode {
          * </ul>
          */
         Node next = deletedNode.next();
-        deletedNode.setData(next.data());
+        deletedNode.data(next.data());
         deletedNode.next(next.next());
     }
 

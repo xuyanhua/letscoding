@@ -13,7 +13,7 @@ import com.yanhua.datastructure.list.lists.Node;
  * 一个指针每次向后移动两步，一个每次移动一步，直到快指针移到到尾节点，那么慢指针即是所求。
  */
 public class TheMiddleNode {
-    public static Node theLastKthNode(Node head) {
+    public static Node theLastKthNode(Node head, int k) {
         if (head == null) {
             return null;
         }
@@ -28,8 +28,8 @@ public class TheMiddleNode {
     }
 
     public static void main(String[] args) {
-        List list = List.toList(new Integer[]{1, 2, 3, 4, 5});
-        Node theLastKthNode = theLastKthNode(list.head());
+        List list = List.toList(new Integer[]{1, 2, 3, 4, 5, 6});
+        Node theLastKthNode = theLastKthNode(list.head(), 2);
         System.out.println(theLastKthNode.data());
     }
 }
