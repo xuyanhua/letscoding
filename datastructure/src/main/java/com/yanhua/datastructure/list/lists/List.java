@@ -84,4 +84,17 @@ public class List<T> {
         list.setSize(arr.length);
         return list;
     }
+
+    public static int length(Node head) {
+        if (head == null) {
+            return 0;
+        }
+        int i = 0;
+        Node p = head;
+        while (p != null) {
+            i++;
+            p = p.next();
+        }
+        return i;
+    }
 }

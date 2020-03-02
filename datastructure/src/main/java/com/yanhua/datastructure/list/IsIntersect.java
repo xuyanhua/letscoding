@@ -29,6 +29,33 @@ public class IsIntersect {
         return lastNode1 == lastNode2; //尾节点是否相同
     }
 
+    /**
+     * 判断存在环的链表的相交的情况
+     * @param head1
+     * @param head2
+     * @return
+     */
+    public static boolean isIntersectHasCircle(Node head1, Node head2) {
+        Node circleNode1 = null;
+        Node circleNode2 = null;
+
+        if (!HasCircle.hasCircle(head1, circleNode1)) {
+            return false;
+        }
+        if (!HasCircle.hasCircle(head1, circleNode2)) {
+            return false;
+        }
+        Node temp = circleNode2.next();
+        //让节点走一环
+        while (temp != circleNode2) {
+            //如果第一个链表的环上的相遇点也在第二个环上，说明是一个环，就可以认为有交点
+            if (temp == circleNode1)
+                return true;
+            temp = temp.next();
+        }
+        return false;
+    }
+
     public static Node findIntersect(Node head1, Node head2) {
         int length1 = List.length(head1);
         int length2 = List.length(head2);
