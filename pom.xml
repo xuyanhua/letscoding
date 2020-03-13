@@ -12,6 +12,7 @@
         <module>datastructure</module>
         <module>designpattern</module>
         <module>javabase</module>
+        <module>springdemo</module>
     </modules>
 
     <properties>
