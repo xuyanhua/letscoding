@@ -26,9 +26,9 @@ public class TestYield {
             }
 
         });
-        Thread hign = new Thread(() -> {
+        Thread high = new Thread(() -> {
             for (int j = 0; j < 10; j++) {
-                System.out.println("hign....重要的线程，希望先运行");
+                System.out.println("high....重要的线程，希望先运行");
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
@@ -38,9 +38,9 @@ public class TestYield {
 
         });
         low.setPriority(1);
-        hign.setPriority(10);
+        high.setPriority(10);
         low.start();
-        hign.start();
+        high.start();
 
 
     }

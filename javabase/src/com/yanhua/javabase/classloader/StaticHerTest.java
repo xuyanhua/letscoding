@@ -1,20 +1,20 @@
-package com.yanhua.javabase.concurrent.base.staticher;
+package com.yanhua.javabase.classloader;
 
 /**
  * 子类会继承父类的静态属性和方法，但不会重写，而是覆盖
  */
 public class StaticHerTest {
     public static void main(String[] args) {
-        Child child = new Child();
-        System.out.println(Parent.s);
+        StaticChild child = new StaticChild();
+        System.out.println(StaticParent.s);
         System.out.println(child.s);
-        Parent.hello();
-        Child.hello();
+        StaticParent.hello();
+        StaticChild.hello();
         child.hello();
     }
 }
 
-class Parent {
+class StaticParent {
     static String s = "12345";
 
     static void hello() {
@@ -22,7 +22,7 @@ class Parent {
     }
 }
 
-class Child extends Parent {
+class StaticChild extends StaticParent {
     static String s = "123456";
 
     static void hello() {
