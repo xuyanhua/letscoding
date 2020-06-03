@@ -24,14 +24,18 @@ public class TestRejected {
         executorService.shutdown();
     }
 
-    public static void testCallerRuns(){
-        executorService.setRejectedExecutionHandler(new ThreadPoolExecutor.CallerRunsPolicy());
+    public static void testCallerRuns() {
+        executorService.setRejectedExecutionHandler(new ThreadPoolExecutor.CallerRunsPolicy());//交给主线程执行
+//        executorService.setRejectedExecutionHandler(new ThreadPoolExecutor.DiscardPolicy());//直接忽略，不执行也不报错
+//        executorService.setRejectedExecutionHandler(new ThreadPoolExecutor.AbortPolicy());//抛出未检查异常RejectedExecutionException
+//        executorService.setRejectedExecutionHandler(new ThreadPoolExecutor.DiscardOldestPolicy());//忽略最旧的任务，优先做新任务
+
         final Thread mainThread = Thread.currentThread();
         System.out.println("主线程名称为：" + mainThread);
         Runnable task = () -> {
             Thread child = Thread.currentThread();
             if (mainThread.equals(child)) {
-                System.out.println("交换给主线程运行。");
+                System.out.println("交还给主线程运行。");
             } else {
                 System.out.println("子线程自己运行。");
             }
@@ -47,4 +51,5 @@ public class TestRejected {
             executorService.submit(task);
         }
     }
+
 }
