@@ -3,13 +3,14 @@ package com.yanhua.algorithms.other.twothread;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * 顺序打印数字
  * 两个线程，一个打印1，2，一个打印3,4
  *
  * @author xuyanhua
  * @description:
  * @date 2019/4/9 下午6:12
  */
-public class TwoThread1 {
+public class SeqPrintNumber {
 
     final static Object lock = new Object();
     static Integer num = new Integer(0);

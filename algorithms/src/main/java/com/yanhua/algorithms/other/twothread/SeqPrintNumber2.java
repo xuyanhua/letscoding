@@ -13,7 +13,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @description:
  * @date 2019/4/9 下午6:12
  */
-public class TwoThread2 {
+public class SeqPrintNumber2 {
     static ReentrantLock lock = new ReentrantLock(true);
     static Integer num = 1;
     static int thread_num = 7;
