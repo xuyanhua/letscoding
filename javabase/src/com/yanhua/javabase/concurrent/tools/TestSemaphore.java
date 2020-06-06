@@ -53,24 +53,20 @@ public class TestSemaphore {
 
     public static void main(String[] args) throws InterruptedException {
         final TestSemaphore testSemaphore = new TestSemaphore(3);
-        new Thread(new Runnable() {
-            public void run() {
-                Random r = new Random();
-                for (int i = 0; i < 100; i++) {
-                    try {
-                        testSemaphore.add(r.nextInt(10) + "");
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+        new Thread(() -> {
+            Random r = new Random();
+            for (int i = 0; i < 100; i++) {
+                try {
+                    testSemaphore.add(r.nextInt(10) + "");
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
             }
         }).start();
-        new Thread(new Runnable() {
-            public void run() {
-                Random r = new Random();
-                for (int i = 0; i < 100; i++) {
-                    testSemaphore.remove(r.nextInt(10) + "");
-                }
+        new Thread(() -> {
+            Random r = new Random();
+            for (int i = 0; i < 100; i++) {
+                testSemaphore.remove(r.nextInt(10) + "");
             }
         }).start();
 

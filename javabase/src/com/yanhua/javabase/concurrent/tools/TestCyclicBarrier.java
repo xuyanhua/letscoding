@@ -19,19 +19,17 @@ import java.util.concurrent.CyclicBarrier;
  */
 public class TestCyclicBarrier {
     final CyclicBarrier cyclicBarrier = new CyclicBarrier(3);
-    private Runnable worker = new Runnable() {
-        public void run() {
-            try {
-                System.out.println(Thread.currentThread() + "线程准备开始工作");
-                Thread.sleep(100);
-                cyclicBarrier.await();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } catch (BrokenBarrierException e) {
-                e.printStackTrace();
-            }
-            System.out.println(Thread.currentThread() + "开始执行工作");
+    private Runnable worker = () -> {
+        try {
+            System.out.println(Thread.currentThread() + "线程准备开始工作");
+            Thread.sleep(100);
+            cyclicBarrier.await();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (BrokenBarrierException e) {
+            e.printStackTrace();
         }
+        System.out.println(Thread.currentThread() + "开始执行工作");
     };
 
     public void start(int nThreads) {

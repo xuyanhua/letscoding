@@ -14,38 +14,34 @@ import java.util.concurrent.Exchanger;
  */
 public class TestExchanger {
     private Exchanger<String> exchanger = new Exchanger<String>();
-    private Runnable worker1 = new Runnable() {
-        public void run() {
-            try {
-                String current = "worker1";
-                String s = Thread.currentThread().toString();
-                System.out.println(current + "-before->" + s);
-                Thread.sleep(1000);
-                String exchange = exchanger.exchange(s);
-                System.out.println(current + "-after->" + exchange);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+    private Runnable worker1 = () -> {
+        try {
+            String current = "worker1";
+            String s = Thread.currentThread().toString();
+            System.out.println(current + "-before->" + s);
+            Thread.sleep(1000);
+            String exchange = exchanger.exchange(s);
+            System.out.println(current + "-after->" + exchange);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     };
 
-    private Runnable worker2 = new Runnable() {
-        public void run() {
-            try {
-                String current = "worker2";
-                String s = Thread.currentThread().toString();
-                System.out.println(current + "-before->" + s);
-                Thread.sleep(1000);
-                String exchange = exchanger.exchange(s);
-                System.out.println(current + "-after->" + exchange);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+    private Runnable worker2 = () -> {
+        try {
+            String current = "worker2";
+            String s = Thread.currentThread().toString();
+            System.out.println(current + "-before->" + s);
+            Thread.sleep(1000);
+            String exchange = exchanger.exchange(s);
+            System.out.println(current + "-after->" + exchange);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     };
 
     public void start() {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 1; i++) {
             new Thread(worker1).start();
             new Thread(worker2).start();
         }
