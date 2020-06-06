@@ -16,8 +16,8 @@ public class SeqPrintNumber {
     static Integer num = new Integer(0);
 
     public static void main(String[] args) throws InterruptedException {
-        MyThread myThread1 = new MyThread(100);
-        MyThread myThread2 = new MyThread(100);
+        MyThread myThread1 = new MyThread(10);
+        MyThread myThread2 = new MyThread(10);
         Thread t1 = new Thread(myThread1, "Thread1");
         Thread t2 = new Thread(myThread2, "Thread2");
         t1.start();
