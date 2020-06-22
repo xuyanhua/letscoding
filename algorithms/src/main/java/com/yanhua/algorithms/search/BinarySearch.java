@@ -53,7 +53,7 @@ public class BinarySearch {
      * 折半查找的改进，将1/2改成   ----------------- * (high-low)
      * arr[high]-arr[low]
      * 这种方式，越是平均分布，速度越快，如果完全平均，仅需一次查找
-     *
+     * 这种查找方式叫插值查找
      * @param arr
      * @param key
      * @return
