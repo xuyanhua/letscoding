@@ -1,12 +1,16 @@
 package com.yanhua.algorithms.search;
 
+import java.util.Arrays;
+
 /**
  * 顺序查找 O(n)
  */
 public class SeqSearch {
     public static void main(String[] args) {
         int[] arr = new int[]{10, 21, 23, 34, 51, 60, 67, 88, 89};
-
+        int key = 60;
+        int index = search(arr, key);
+        System.out.printf("find %d from %s ,index=%d\n", key, Arrays.toString(arr), index);
     }
 
     /**
