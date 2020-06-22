@@ -54,6 +54,7 @@ public class BinarySearch {
      * arr[high]-arr[low]
      * 这种方式，越是平均分布，速度越快，如果完全平均，仅需一次查找
      * 这种查找方式叫插值查找
+     *
      * @param arr
      * @param key
      * @return
@@ -85,6 +86,17 @@ public class BinarySearch {
             }
         } while (low <= high);
         System.out.println("比较次数：" + count);
+        return -1;
+    }
+
+    /**
+     * 斐波那契查找
+     * 相对于1/2的折半，斐波那契采用黄金分割查找折半点
+     *
+     * @return
+     */
+    public static int finbonaciiSearch() {
+        //todo
         return -1;
     }
 
