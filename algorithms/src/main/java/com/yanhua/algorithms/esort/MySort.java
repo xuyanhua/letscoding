@@ -1,4 +1,4 @@
-package com.yanhua.algorithms.sort;
+package com.yanhua.algorithms.esort;
 
 import java.io.BufferedReader;
 import java.io.IOException;
