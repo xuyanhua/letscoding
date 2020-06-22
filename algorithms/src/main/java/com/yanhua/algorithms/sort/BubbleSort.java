@@ -14,8 +14,8 @@ public class BubbleSort {
     }
 
     /**
-     * 冒泡排序，时间复杂度O(logn)
-     *
+     * 冒泡排序，时间复杂度O(n^2)[实际是n^2/2]
+     * 步骤：从后往前，每一趟两两交换，将小的数往前移动
      * @param arr
      * @return
      */
