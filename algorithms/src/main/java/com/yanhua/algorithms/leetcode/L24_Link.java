@@ -1,22 +1,30 @@
 package com.yanhua.algorithms.leetcode;
 
+import com.yanhua.algorithms.Node;
+
 /**
  * 将链表的节点两两交换，例如
  * 1,2,3,4 -> 2,1,4,3
  */
 public class L24_Link {
     public static void main(String[] args) {
-        Node head = toLink(new int[]{1, 2, 3, 4});
-        print(head);
+        Node head1 = Node.toLink(new int[]{1, 2, 3, 4});
+        Node.print(head1);
         System.out.println("\n反转后：");
-        Node head1 = swapPairs(head);
-        print(head1);
+        Node head2 = swapPairs(head1);
+        Node.print(head2);
+
+        Node head3 = Node.toLink(new int[]{1, 2, 3, 4, 5});
+        System.out.println("\n反转后2：");
+        Node head4 = swapPairs2(head3);
+        Node.print(head4);
 
 
     }
 
     /**
      * 递归法
+     * 时间复杂度O(n)、空间复杂度O(n)主要是递归空间
      *
      * @param head
      * @return
@@ -40,29 +48,34 @@ public class L24_Link {
         return secondNode;
     }
 
-    public static class Node {
-        int value;
-        Node next;
-    }
+    /**
+     * 迭代法
+     * 时间复杂度
+     * 空间复杂度
+     *
+     * @param head
+     * @return
+     */
+    public static Node swapPairs2(Node head) {
+        //临时节点，作为列表的头节点的前置节点，并存储头结节的指针
+        Node temp = new Node();
+        temp.next = head;
+        Node preNode = temp;
+        while (head != null && head.next != null) {
+            Node firstNode = head;
+            Node secondNode = head.next;
 
-    public static Node toLink(int[] arr) {
-        Node head = new Node();
-        head.value = arr[0];
-        Node p = head;
-        for (int i = 1; i < arr.length; i++) {
-            Node tmp = new Node();
-            tmp.value = arr[i];
-            p.next = tmp;
-            p = tmp;
-        }
-        return head;
-    }
+            //交换
+            preNode.next = secondNode;
+            firstNode.next = secondNode.next;
+            secondNode.next = firstNode;
 
-    public static void print(Node head) {
-        while (head != null) {
-            System.out.print(head.value + ",");
-            head = head.next;
+            //重置头节点
+            preNode = firstNode;
+            head = firstNode.next;
         }
+        //返回新的头节点
+        return temp.next;
     }
 
 }
