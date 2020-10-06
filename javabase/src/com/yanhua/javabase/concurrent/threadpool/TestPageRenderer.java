@@ -38,7 +38,7 @@ public class TestPageRenderer {
         }
     }
 
-    public String pageRenderder(int nThreads) throws InterruptedException {
+    public String pageRender(int nThreads) throws InterruptedException {
         ExecutorService executor = Executors.newFixedThreadPool(nThreads);
         List<Callable<String>> tasks = new ArrayList<>();
         //收集任务
@@ -61,10 +61,40 @@ public class TestPageRenderer {
         return sb.toString();
     }
 
+    /**
+     * 使用CompletionService 实现
+     * @param nThreads
+     * @return
+     * @throws InterruptedException
+     */
+    public String pageRender2(int nThreads) throws InterruptedException {
+        ExecutorService executor = Executors.newFixedThreadPool(nThreads);
+        CompletionService<String> service = new ExecutorCompletionService<>(executor);
+        //批量提交任务
+
+        for (int i = 0; i < 20; i++) {
+            service.submit(new MyTask("name-" + i));
+        }
+
+        StringBuilder sb = new StringBuilder();
+        //按顺序获取
+        for(int i = 0; i < 20; i++) {
+            Future<String> future = service.take();
+            try {
+                String s = future.get();
+                System.out.println(s);
+                sb.append(s);
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
+        }
+        return sb.toString();
+    }
+
     public static void main(String[] args) throws InterruptedException {
         int processors = Runtime.getRuntime().availableProcessors();
         long time1 = System.currentTimeMillis();
-        new TestPageRenderer().pageRenderder(processors + 1);
+        new TestPageRenderer().pageRender2(processors + 1);
         long time2 = System.currentTimeMillis();
         System.out.println("并发执行时间:" + (time2 - time1));
         System.out.println("串行时执行时间:" + times);
