@@ -14,6 +14,15 @@ import java.util.Arrays;
  */
 public class O05_2_MergeArray {
 
+    /**
+     * 合并两个有序的数组
+     * 解法：从后往前遍历，谁大放到后一个位置。
+     * 如果从前遍历，需要往后移动数字，比较耗时。
+     * @param arr1
+     * @param len1
+     * @param arr2
+     * @return
+     */
     public static int[] merge(int[] arr1, int len1, int arr2[]) {
         //判空
         if (arr1 == null || arr2 == null) {

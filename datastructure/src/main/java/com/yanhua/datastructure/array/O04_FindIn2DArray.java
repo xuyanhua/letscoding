@@ -7,7 +7,7 @@ package com.yanhua.datastructure.array;
  * @description:
  * @date 2019/4/7 下午8:46
  */
-public class FindIn2DArray {
+public class O04_FindIn2DArray {
     /**
      * 解法，从右上角开始
      * <ul>

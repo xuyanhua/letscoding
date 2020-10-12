@@ -7,7 +7,7 @@ package com.yanhua.datastructure.string;
  * @description:
  * @date 2019/4/7 下午10:19
  */
-public class ReplaceBlank {
+public class O05_1_ReplaceBlank {
 
     /**
      * 要求将字符串中的空格替换为%20。时间复杂度为O(n)

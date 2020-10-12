@@ -20,7 +20,7 @@ import java.util.Arrays;
  * @description:
  * @date 2019/4/7 下午5:29
  */
-public class FindDuplicateElement {
+public class O03_1_FindDuplicateElement {
 
     /**
      * 使用解法3，从头到尾遍历数组
@@ -65,7 +65,7 @@ public class FindDuplicateElement {
     }
 
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 2, 3, 5, 6};
+        int[] arr = {2, 3, 1, 0, 2, 5, 3};
         System.out.println(Arrays.toString(arr));
         int dup = duplicate(arr);
         System.out.println("dup num = " + dup);

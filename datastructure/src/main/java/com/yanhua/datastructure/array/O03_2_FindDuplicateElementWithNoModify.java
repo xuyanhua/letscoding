@@ -17,7 +17,7 @@ import java.util.Arrays;
  * @description:
  * @date 2019/4/7 下午5:29
  */
-public class FindDuplicateElementWithNoModify {
+public class O03_2_FindDuplicateElementWithNoModify {
 
     /**
      * 解法1，从头到尾遍历数组
@@ -62,6 +62,7 @@ public class FindDuplicateElementWithNoModify {
      * <li>a、取1~n的中间数middle，如果start~middle之间的数字计数count大于middle-start+1，则start~middle
      * 之间肯定存在重复的数，否则middle+1~end之间存在重复的数</li>
      * <li>b、重复上面的步骤，直到start==end时，count如果大于1则说明start（或end）就是重复的数字</li>
+     * <p>
      * </ul>
      *
      * @param arr
@@ -97,6 +98,8 @@ public class FindDuplicateElementWithNoModify {
             if (count > (middle - start + 1)) {
                 end = middle;
             } else {
+                //fixme 注：该算法这有问题，如果count数和数字相同，就跳过了，但有可能这里也
+                //有重复的数字，例如2,3,3子数组中，在1～3范围内有三个数字，就检测不出来
                 start = middle + 1;
             }
         }
@@ -115,9 +118,11 @@ public class FindDuplicateElementWithNoModify {
 
 
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 2, 3, 5, 6};
-        int dup = duplicate1(arr);
-        System.out.println("dup num = " + dup);
+//        int[] arr = {1, 2, 3, 2, 3, 5, 6};
+        int[] arr = {2, 3, 5, 4, 2, 6};
+//        int[] arr = {1,1,2};
+//        int dup = duplicate1(arr);
+//        System.out.println("dup num = " + dup);
         int dup2 = duplicate2(arr);
         System.out.println("dup num = " + dup2);
     }
