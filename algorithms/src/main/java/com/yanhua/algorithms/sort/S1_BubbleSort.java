@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * 冒泡排序
  */
-public class BubbleSort {
+public class S1_BubbleSort {
     public static void main(String[] args) {
         int[] arr = new int[]{6, 9, 7, 2, 3, 1};
         int[] newArr = bubbleSort(arr);
@@ -25,17 +25,17 @@ public class BubbleSort {
         }
         int len = arr.length;
         for (int i = 0; i < len - 1; i++) {
-            int swap = 0;
+            int count = 0;
             for (int j = len - 1; j > 0; j--) {
                 if (arr[j] < arr[j - 1]) {
                     int tmp = arr[j];
                     arr[j] = arr[j - 1];
                     arr[j - 1] = tmp;
-                    swap++;
+                    count++;
                 }
             }
             System.out.println(Arrays.toString(arr));
-            if (swap == 0) {
+            if (count == 0) {
                 break;
             }
         }
