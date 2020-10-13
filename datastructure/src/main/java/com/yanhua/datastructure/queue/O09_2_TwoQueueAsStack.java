@@ -6,12 +6,12 @@ import java.util.concurrent.ArrayBlockingQueue;
 /**
  * 两个队列实现一个栈
  */
-public class TwoQueueAsStack {
+public class O09_2_TwoQueueAsStack {
     private Queue<String> queue1 = new ArrayBlockingQueue<String>(10);
     private Queue<String> queue2 = new ArrayBlockingQueue<String>(10);
 
     public static void main(String[] args) {
-        TwoQueueAsStack stack = new TwoQueueAsStack();
+        O09_2_TwoQueueAsStack stack = new O09_2_TwoQueueAsStack();
         stack.push("a");
         stack.push("b");
         stack.push("c");
