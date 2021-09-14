@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * 在两个有序数组中寻找
- *
+ *　https://leetcode-cn.com/problems/median-of-two-sorted-arrays/solution/xun-zhao-liang-ge-you-xu-shu-zu-de-zhong-wei-s-114/
  * @author xuyanhua02
  * @description
  * @createTime 2021-09-13 19:56
