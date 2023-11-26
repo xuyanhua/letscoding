@@ -1,9 +1,9 @@
 Let's Coding
 # 数据结构
 ## 数组
-+ 找出重复的元素：[FindDuplicateElement](datastructure/src/main/java/com/yanhua/datastructure/array/FindDuplicateElement.java)
-+ 不修改数组查找重复的元素：[FindDuplicateElementWithNoModify](datastructure/src/main/java/com/yanhua/datastructure/array/FindDuplicateElementWithNoModify.java)
-+ 在二维数组中查找指定元素是否存在：[FindIn2DArray](datastructure/src/main/java/com/yanhua/datastructure/array/FindIn2DArray.java)
++ 找出重复的元素：[FindDuplicateElement](datastructure/src/main/java/com/yanhua/datastructure/array/O03_1_FindDuplicateElement.java)
++ 不修改数组查找重复的元素：[FindDuplicateElementWithNoModify](datastructure/src/main/java/com/yanhua/datastructure/array/O03_2_FindDuplicateElementWithNoModify.java)
++ 在二维数组中查找指定元素是否存在：[FindIn2DArray](datastructure/src/main/java/com/yanhua/datastructure/array/O04_FindIn2DArray.java)
 
 ## 链表
 + O(1)时间复杂度内删除元素：[DeleteListNode](datastructure/src/main/java/com/yanhua/datastructure/list/deletenode/DeleteListNode.java)
